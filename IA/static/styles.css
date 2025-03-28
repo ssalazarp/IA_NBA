@@ -1,0 +1,84 @@
+/* Estilo general del cuerpo */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Contenedor del formulario */
+form {
+    background-color: #ffffff;
+    border: 3px solid orange;
+    border-radius: 10px;
+    padding: 20px;
+    width: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilo de las etiquetas */
+label {
+    font-weight: bold;
+    color: #333333;
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* Estilo de las listas desplegables */
+select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 2px solid black;
+    border-radius: 5px;
+    background-color: #ffffff;
+    font-size: 14px;
+    color: #333333;
+    box-sizing: border-box;
+}
+
+/* Cambiar el color del borde al enfocar */
+select:focus {
+    border-color: orange;
+    outline: none;
+    box-shadow: 0 0 5px orange;
+}
+
+/* Estilo de los campos de entrada */
+input[type="text"],
+input[type="number"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 2px solid black;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+/* Estilo del botón */
+input[type="submit"] {
+    background-color: orange;
+    color: white;
+    border: none;
+    padding: 10px;
+    width: 100%;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+input[type="submit"]:hover {
+    background-color: black;
+    color: orange;
+}
+
+/* Estilo del resultado */
+h2 {
+    color: orange;
+    text-align: center;
+    margin-top: 20px
+}

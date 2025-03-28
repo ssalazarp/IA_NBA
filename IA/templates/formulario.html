@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+    <!-- Título que aparecerá en la pestaña del navegador -->
+    <title>Predicción de Resultado de Fútbol</title>
+
+</head>
+<body>
+    <!-- Título principal en la página web -->
+    <h1>Prediccion Partidos</h1><br><br>
+    <br><br><h2>NBA</h2>
+
+    <!-- Formulario que envía datos al servidor usando método POST a la ruta /predict -->
+    <form action="/predict" method="post">
+
+        <!-- Cuadro de texto para ingresar el nombre del equipo local -->
+    
+        <label>Selecciona un equipo local:</label>
+        <select name="HOME_TEAM" required>
+            <option value="Spurs">Spurs</option>
+            <option value="Heat">Heat</option>
+            <option value="Celtics">Celtics</option>
+            <option value="Mavericks">Mavericks</option>
+            <option value="Warriors">Warriors</option>
+            <option value="Rockets">Rockets</option>
+            <option value="Nuggets">Nuggets</option>
+            <option value="Jazz">Jazz</option>
+            <option value="Lakers">Lakers</option>
+            <option value="Thunder">Thunder</option>
+            <option value="Cavaliers">Cavaliers</option>
+            <option value="Pacers">Pacers</option>
+            <option value="Clippers">Clippers</option>
+            <option value="Suns">Suns</option>
+            <option value="Raptors">Raptors</option>
+            <option value="Grizzlies">Grizzlies</option>
+            <option value="Bulls">Bulls</option>
+            <option value="Trail Blazers">Trail Blazers</option>
+            <option value="Bucks">Bucks</option>
+            <option value="Pistons">Pistons</option>
+            <option value="Hawks">Hawks</option>
+            <option value="76ers">76ers</option>
+            <option value="Pelicans">Pelicans</option>
+            <option value="Nets">Nets</option>
+            <option value="Magic">Magic</option>
+            <option value="Wizards">Wizards</option>
+            <option value="Kings">Kings</option>
+            <option value="Knicks">Knicks</option>
+            <option value="Timberwolves">Timberwolves</option>
+            <option value="Hornets">Hornets</option>
+
+        </select><br><br>
+
+        <!-- Cuadro de texto para ingresar el nombre del equipo visitante -->
+        <label>Equipo Visitante:</label>
+        <select name="VISITOR_TEAM" required>
+            <option value="Spurs">Spurs</option>
+            <option value="Heat">Heat</option>
+            <option value="Celtics">Celtics</option>
+            <option value="Mavericks">Mavericks</option>
+            <option value="Warriors">Warriors</option>
+            <option value="Rockets">Rockets</option>
+            <option value="Nuggets">Nuggets</option>
+            <option value="Jazz">Jazz</option>
+            <option value="Lakers">Lakers</option>
+            <option value="Thunder">Thunder</option>
+            <option value="Cavaliers">Cavaliers</option>
+            <option value="Pacers">Pacers</option>
+            <option value="Clippers">Clippers</option>
+            <option value="Suns">Suns</option>
+            <option value="Raptors">Raptors</option>
+            <option value="Grizzlies">Grizzlies</option>
+            <option value="Bulls">Bulls</option>
+            <option value="Trail Blazers">Trail Blazers</option>
+            <option value="Bucks">Bucks</option>
+            <option value="Pistons">Pistons</option>
+            <option value="Hawks">Hawks</option>
+            <option value="76ers">76ers</option>
+            <option value="Pelicans">Pelicans</option>
+            <option value="Nets">Nets</option>
+            <option value="Magic">Magic</option>
+            <option value="Wizards">Wizards</option>
+            <option value="Kings">Kings</option>
+            <option value="Knicks">Knicks</option>
+            <option value="Timberwolves">Timberwolves</option>
+            <option value="Hornets">Hornets</option>
+        </select><br><br>
+
+        <!-- Menú desplegable para indicar si el partido se juega en cancha neutral 
+        <label>¿Cancha neutral?:</label> 
+        <select name="neutral" required>
+            -->
+            <!-- Opción 'No' (valor False) 
+            <option value="False">No</option>
+            -->
+            <!-- Opción 'Sí' (valor True) 
+            <option value="True">Sí</option>
+        </select><br><br>
+        -->
+        <!-- Cuadro numérico para la suma de los goles anotados por el equipo local en sus últimos 3 partidos -->
+        <label>Puntos totales de local:</label>
+        <input type="number" name="PTS_HOME" required><br><br>
+
+        <!-- Cuadro numérico para la suma de los goles anotados por el equipo visitante en sus últimos 3 partidos -->
+        <label>Porcentaje acierto de tiros de campo local:</label>
+        <input type="number" name="FG_PCT_home" step="0.01" required><br><br>
+
+        <!-- Botón que envía el formulario para predecir el resultado -->
+        <input type="submit" value="Predecir Resultado">
+    </form>
+
+    {% if prediction %}
+        <!-- Se muestra el resultado predicho del modelo -->
+        <h2>Resultado Predicho: {{ prediction }}</h2>
+    {% endif %}
+</body>
+</html>
